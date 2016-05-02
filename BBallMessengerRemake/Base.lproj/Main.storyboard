@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BBallMessengerRemake" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bw0-ZG-c6O">
+                                <rect key="frame" x="200" y="45" width="200" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="d9C-Jo-ZFO"/>
+                                    <constraint firstAttribute="width" constant="200" id="gg3-co-9BT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6SF-ha-roI" customClass="CourtView" customModule="BBallMessengerRemake" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="89" width="600" height="491"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basketball_basket-512" translatesAutoresizingMaskIntoConstraints="NO" id="Ipc-7P-XBP">
+                                        <rect key="frame" x="200" y="8" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ipc-7P-XBP" secondAttribute="height" multiplier="1:1" id="K5n-LW-x1y"/>
+                                            <constraint firstAttribute="height" constant="200" id="zX3-fj-rSA"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.46872996794871791" green="0.46872996794871791" blue="0.46872996794871791" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="Ipc-7P-XBP" firstAttribute="top" secondItem="6SF-ha-roI" secondAttribute="topMargin" id="6dF-Xl-1v8"/>
+                                    <constraint firstItem="Ipc-7P-XBP" firstAttribute="centerX" secondItem="6SF-ha-roI" secondAttribute="centerX" id="chQ-2o-L32"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="b0V-ux-Tg3" appends="YES" id="CWq-cw-Udd"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bw0-ZG-c6O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8K0-QP-th6"/>
+                            <constraint firstItem="6SF-ha-roI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AbX-68-CCV"/>
+                            <constraint firstAttribute="bottom" secondItem="6SF-ha-roI" secondAttribute="bottom" constant="20" symbolic="YES" id="Ara-9P-Rsa"/>
+                            <constraint firstItem="6SF-ha-roI" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Nt9-tY-PAa"/>
+                            <constraint firstItem="6SF-ha-roI" firstAttribute="centerX" secondItem="bw0-ZG-c6O" secondAttribute="centerX" id="Pb6-uH-YCa"/>
+                            <constraint firstItem="6SF-ha-roI" firstAttribute="top" secondItem="bw0-ZG-c6O" secondAttribute="bottom" constant="8" symbolic="YES" id="S44-ut-zPg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6SF-ha-roI" secondAttribute="bottom" constant="20" id="ZFu-1v-rEz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6SF-ha-roI" secondAttribute="bottom" constant="20" id="b6S-X8-39d"/>
+                            <constraint firstAttribute="bottom" secondItem="6SF-ha-roI" secondAttribute="bottom" constant="20" symbolic="YES" id="c92-jb-tMQ"/>
+                            <constraint firstItem="bw0-ZG-c6O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f5q-mj-6YF"/>
+                            <constraint firstItem="bw0-ZG-c6O" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hO6-Zr-ta3"/>
+                            <constraint firstItem="6SF-ha-roI" firstAttribute="top" secondItem="bw0-ZG-c6O" secondAttribute="bottom" constant="8" id="qYj-nZ-6ue"/>
+                            <constraint firstAttribute="bottom" secondItem="6SF-ha-roI" secondAttribute="bottom" constant="20" symbolic="YES" id="uX1-bf-5BG"/>
+                            <constraint firstItem="6SF-ha-roI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="89" id="vkQ-5r-UmM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="c92-jb-tMQ"/>
+                                <exclude reference="qYj-nZ-6ue"/>
+                                <exclude reference="uX1-bf-5BG"/>
+                                <exclude reference="8K0-QP-th6"/>
+                                <exclude reference="hO6-Zr-ta3"/>
+                                <exclude reference="ZFu-1v-rEz"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="basketBallnet" destination="Ipc-7P-XBP" id="8Xw-Xo-dcN"/>
+                        <outlet property="gameView" destination="6SF-ha-roI" id="MbM-0C-Ib8"/>
+                        <outlet property="pan" destination="b0V-ux-Tg3" id="lqq-Af-wL8"/>
+                        <outlet property="scoreLabel" destination="bw0-ZG-c6O" id="RGZ-tD-TAM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="b0V-ux-Tg3">
+                    <connections>
+                        <action selector="shoot:" destination="BYZ-38-t0r" id="63q-mG-jtN"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="497" y="513"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="basketball_basket-512" width="512" height="512"/>
+    </resources>
+</document>
