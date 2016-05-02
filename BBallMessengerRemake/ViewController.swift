@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIDynamicAnimatorDelegate {
     
     var currentScore = 0
     var firstShot = true
+    var passedTop = false
     let mid = UIScreen.mainScreen().bounds.width/2 - 37.5
     let vstart = UIScreen.mainScreen().bounds.height/2
     @IBOutlet weak var scoreLabel: UILabel!
@@ -31,13 +32,53 @@ class ViewController: UIViewController, UIDynamicAnimatorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         animator.addBehavior(ballBehavior)
+        //basketBallnet.hidden = true
         reset()
+        makeNet()
     }
     
     func incrementScore() {
         currentScore += 1
         scoreLabel.text = "Score: \(currentScore)"
     }
+    
+    func makeNet() {
+//        let dim = CGSize(width: 100.0, height: 10.0)
+//        var rim = CGRect(origin: basketBallnet.center, size: dim)
+//        rim.origin.x = (UIScreen.mainScreen().bounds.width/2) - 50
+//        rim.origin.y += 5
+        
+        let left = CGRect(x: (UIScreen.mainScreen().bounds.width/2) - 65, y: basketBallnet.center.y+5, width: 20.0, height: 10.0)
+        let right = CGRect(x: (UIScreen.mainScreen().bounds.width/2) + 45, y: basketBallnet.center.y+5, width: 20.0, height: 10.0)
+        
+        //let path = UIBezierPath(rect: rim)
+        
+        let rimL = UIBezierPath(ovalInRect: left)
+        let rimR = UIBezierPath(ovalInRect: right)
+        
+        //ballBehavior.addRim(path, named: "Rim")
+        //gameView.addEdges(path, named: "Rim")
+        
+        ballBehavior.addRim(rimL, named: "left")
+        ballBehavior.addRim(rimR, named: "Right")
+        gameView.addEdges(rimL, named: "Left")
+        gameView.addEdges(rimR, named: "Right")
+    }
+    
+    func removeNet() {
+        ballBehavior.removeRim(named: "Left")
+        ballBehavior.removeRim(named: "Right")
+    }
+    
+//    func evaluator() {
+//        repeat {
+//            if (lastBall?.center.y >= (basketBallnet.center.y+5)) {
+//                top = true
+//                makeNet()
+//            }
+//        } while !passedTop
+//    }
+    
     
     
     func reset() {
@@ -76,14 +117,6 @@ class ViewController: UIViewController, UIDynamicAnimatorDelegate {
         lastBall = ball
         return ball
     }
-    
-//    func scored() {
-//        incrementScore()
-//        //let y = basketBall.frame.origin.y
-//        //let x = newBallPosX()
-//        
-//        basketBall.frame = CGRect(x: x, y: y, width: basketBall.frame.size.width, height: basketBall.frame.size.height)
-//    }
     
     @IBAction func shoot(sender: UIPanGestureRecognizer) {
         let pushBehavior : UIPushBehavior!

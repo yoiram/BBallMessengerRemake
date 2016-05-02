@@ -11,8 +11,6 @@ import UIKit
 
 class BallBehavior: UIDynamicBehavior {
     let gravity = UIGravityBehavior()
-    let push = UIPushBehavior()
-
     
     lazy var ballBehavior: UIDynamicItemBehavior = {
         let lazilyCreatedBallBehavior = UIDynamicItemBehavior()
@@ -32,12 +30,6 @@ class BallBehavior: UIDynamicBehavior {
         addChildBehavior(gravity)
         addChildBehavior(ballBehavior)
         addChildBehavior(rimBehavior)
-        addChildBehavior(push)
-    }
-    
-    func addVelocity(velocity: UInt, ball:UIImageView) {
-        //ballBehavior.addLinear
-        //ballBehavior.addLinearVelocity(CGPoint.zero, forItem: ball)
     }
     
     func addBall(ball: UIImageView) {
@@ -57,6 +49,10 @@ class BallBehavior: UIDynamicBehavior {
     func addRim(path: UIBezierPath, named name: String){
         rimBehavior.removeBoundaryWithIdentifier(name)
         rimBehavior.addBoundaryWithIdentifier(name, forPath: path)
+    }
+    
+    func removeRim(named name: String) {
+        rimBehavior.removeBoundaryWithIdentifier(name)
     }
 }
 

@@ -17,9 +17,10 @@ class CourtView : UIView {
         setNeedsDisplay()
     }
     
-    func drawRim(rect: CGRect) {
+    override func drawRect(rect: CGRect) {
         for (_,path) in rimEdges {
-            path.stroke()
+            UIColor.redColor().setFill()
+            path.fill()
         }
     }
 }
