@@ -78,8 +78,7 @@ class ViewController: UIViewController, UIDynamicAnimatorDelegate {
 //            }
 //        } while !passedTop
 //    }
-    
-    
+
     
     func reset() {
         if (firstShot) {
