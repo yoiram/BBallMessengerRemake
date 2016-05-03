@@ -48,8 +48,8 @@ class ViewController: UIViewController, UIDynamicAnimatorDelegate {
 //        rim.origin.x = (UIScreen.mainScreen().bounds.width/2) - 50
 //        rim.origin.y += 5
         
-        let left = CGRect(x: (UIScreen.mainScreen().bounds.width/2) - 65, y: basketBallnet.center.y+5, width: 20.0, height: 10.0)
-        let right = CGRect(x: (UIScreen.mainScreen().bounds.width/2) + 45, y: basketBallnet.center.y+5, width: 20.0, height: 10.0)
+        let left = CGRect(x: (UIScreen.mainScreen().bounds.width/2) - 65, y: basketBallnet.center.y+5, width: 10.0, height: 10.0)
+        let right = CGRect(x: (UIScreen.mainScreen().bounds.width/2) + 55, y: basketBallnet.center.y+5, width: 10.0, height: 10.0)
         
         //let path = UIBezierPath(rect: rim)
         
@@ -73,8 +73,14 @@ class ViewController: UIViewController, UIDynamicAnimatorDelegate {
 //    func evaluator() {
 //        repeat {
 //            if (lastBall?.center.y >= (basketBallnet.center.y+5)) {
-//                top = true
+//                passedTop = true
 //                makeNet()
+//            } else if (lastBall?.center.y < (basketBallnet.center.y+5)) {
+//                removeNet()
+//                passedTop = false
+//            }
+//            else {
+//                break
 //            }
 //        } while !passedTop
 //    }
@@ -133,6 +139,7 @@ class ViewController: UIViewController, UIDynamicAnimatorDelegate {
         default: break
         }
         firstShot = false
+        evaluator()
     }
     
     func createPushBehavior(angle: CGFloat)->UIPushBehavior {
