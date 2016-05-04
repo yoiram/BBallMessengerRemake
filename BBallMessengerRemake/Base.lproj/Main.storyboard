@@ -89,7 +89,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="b0V-ux-Tg3">
                     <connections>
-                        <action selector="shoot:" destination="BYZ-38-t0r" id="63q-mG-jtN"/>
+                        <action selector="shoot:" destination="BYZ-38-t0r" id="HN7-ZD-isO"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>
